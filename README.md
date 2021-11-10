@@ -20,7 +20,7 @@ Once the application is downloaded, you have to change the executable file Hasti
 java -jar Hastie_NaiveBayes.jar C:\Hastie10_2Corrected.txt C:\Hastie10_2Corrected.txt 0.0 9600.0 9601.0 12000.0
 In other words, the assignment to the Hastie10_2.csv file is changed to Hastie10_2Corrected.txt.
 
-We will also test the HASTIE_sklearn_with_test_out_train.py program that presents the results of the SKLEARN classifiers: KNeighbor, GaussianNB (naive Bayes), RandomForestClassifier, AdaBoostClassifier and GradientBoostingClassifier.
+We will also test the HASTIE_sklearn_with_test_out_train.py program that presents the results of the SKLEARN classifiers: KNeighbors, GaussianNB (naive Bayes), RandomForestClassifier, AdaBoostClassifier and GradientBoostingClassifier.
 
 The hit rate exceeds 99% in all cases.
 
@@ -38,12 +38,12 @@ If the class of the first 5 records of C:\Hastie10_2_20Corrected.txt is changed,
 
 If the class of the first 10 records of C:\Hastie10_2_20Corrected.txt is changed, it should give an error rate of 10 hits and 10 misses, that  the Java program gives when executing Hastie_NaiveBayes.bat and also all sklearn clasifiers except GaussianNB (Naive Bayes) that give 9 hits and 11 misses
 
-If the class of the first 15 records of C:\Hastie10_2_20Corrected.txt is changed, it should give an error rate of 5 hits and 15 failures that gives the Java program  when executing Hastie_NaiveBayes.bat, KNeighbor, Adaboost and GradientBoost
+If the class of the first 15 records of C:\Hastie10_2_20Corrected.txt is changed, it should give an error rate of 5 hits and 15 failures that gives the Java program  when executing Hastie_NaiveBayes.bat, KNeighbors, Adaboost and GradientBoost
 
 sklearn GaussianNB gives 7 hits and 13 misses
 sklearn RandomForest gives 6 hits and 14 misses
 
-If the class of the 20 records of C:\Hastie10_2_20Corrected.txt is changed, it should give an error rate of 0 hits and 20 failures that  the Java program gives when executing Hastie_NaiveBayes.bat, KNeighbor,  Adaboost and GradientBoost, the rest gives the following values:
+If the class of the 20 records of C:\Hastie10_2_20Corrected.txt is changed, it should give an error rate of 0 hits and 20 failures that  the Java program gives when executing Hastie_NaiveBayes.bat, KNeighbors,  Adaboost and GradientBoost, the rest gives the following values:
 
 sklearn GaussianNB: 2 hits and 18 misses
 sklearn RandomForest: 1 hits and 19 misses
