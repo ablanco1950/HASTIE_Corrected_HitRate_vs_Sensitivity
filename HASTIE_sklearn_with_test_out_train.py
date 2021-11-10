@@ -4,7 +4,7 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 
-#https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html
+from sklearn.neighbors import KNeighborsClassifier
 
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.naive_bayes import GaussianNB
@@ -79,12 +79,52 @@ df = pd.DataFrame(x)
 df['Y'] = y
 
 # Split into training and test set
-train, test = train_test_split(df, test_size = 0.2,random_state=42)
+train, test = train_test_split(df, test_size = 0.01,random_state=42)
 X_train, Y_train = train.iloc[:,:-1], train.iloc[:,-1]
+# thw file  test is out of train
 # X_test, Y_test = test.iloc[:,:-1], test.iloc[:,-1]
 n_train, n_test = len(X_train), len(X_test)
-# print(X_train)   
+   
 Y_predict, pred_test = [np.zeros(n_train), np.zeros(n_test)]
+
+#######################################################################333
+# KNN NEIGHBOR
+######################################################################333
+model = KNeighborsClassifier(n_neighbors=3)
+
+model.fit(X_train, Y_train)
+
+TotAciertos=0.0
+TotFallos=0.0
+
+  
+Y_predict_test=model.predict(X_test)
+
+Y_test_arr=np.array(Y_test)
+
+TotAciertos=0.0
+TotFallos=0.0
+
+
+i=1   
+for i in range (len(Y_predict_test)):
+    
+     
+   # print ("Predicted class= "+ str(Y_predict_test[i]) + " True class ="
+   #          +  str(Y_test_arr[i]))
+    if (Y_predict_test[i]==Y_test_arr[i]):
+        TotAciertos=TotAciertos+1
+    else:
+        TotFallos =TotFallos + 1
+        
+print("")  
+print("RESULTS FOR KNN")     
+print("Total Hits TEST = " + str(TotAciertos))
+print("Total Failures TEST = " + str(TotFallos))
+
+#######################################################################333
+# NAIVE BAYES
+######################################################################333
 
 lm= GaussianNB()
 lm.fit(X_train,Y_train)   
@@ -127,7 +167,7 @@ for i in range (len(Y_predict)):
     else:
         TotFallos =TotFallos + 1
 print("")  
-print("RESULTS GRADIENT FOREST")    
+print("RESULTS RANDOM FOREST")    
 print("Total hits TEST = " + str(TotAciertos))
 print("Total failures TEST = " + str(TotFallos))
 ###################################################3
