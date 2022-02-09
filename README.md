@@ -14,8 +14,8 @@ Functioning:
 The attached file Hastie10_2_20Corrected.txt is downloaded to disk C :, which will be the input for the tests (this file is the result of applying to the original HASTIE file: Hastie10_2.csv, which is attached, the program
 HASTIE_sklearn_corrected.py, attached)
 
-The application is going to be tested in Java, downloadable from https://github.com/ablanco1950/HASTIE_NAIVEBAYES.
-Once the application is downloaded, you have to change the executable file Hastie_NaiveBayes.bat so that the only line it contains is
+The application is going to be tested against another in Java, downloadable from https://github.com/ablanco1950/HASTIE_NAIVEBAYES.
+Once the application is downloaded, you have to change the executable file Hastie_NaiveBayes.bat so that the only line it contains will be
 
 java -jar Hastie_NaiveBayes.jar C:\Hastie10_2Corrected.txt C:\Hastie10_2Corrected.txt 0.0 9600.0 9601.0 12000.0
 In other words, the assignment to the Hastie10_2.csv file is changed to Hastie10_2Corrected.txt.
